@@ -56,7 +56,6 @@ class Message extends React.Component {
                         <List style={{
                             'minWidth': '60vw',
                             'maxWidth': '80vw',
-                            'backgroundColor': '#37474F',
                             'wordWrap': 'break-word'
                         }}>
                             <ListItem style={{
