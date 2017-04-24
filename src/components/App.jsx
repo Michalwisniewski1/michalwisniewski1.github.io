@@ -15,14 +15,14 @@ import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 var config = {
-    apiKey: "insert your code",
-    authDomain: "insert your code",
-    databaseURL: "insert your code",
-    projectId: "insert your code",
-    storageBucket: "insert your code",
-    messagingSenderId: "insert your code"
+    apiKey: "AIzaSyC1k2h6iwLCFv5bEKUDr2U5eecM0FYccBs",
+    authDomain: "simple-group-chat.firebaseapp.com",
+    databaseURL: "https://simple-group-chat.firebaseio.com",
+    projectId: "simple-group-chat",
+    storageBucket: "simple-group-chat.appspot.com",
+    messagingSenderId: "775527216452"
 };
-firebase.initializeApp(config);;
+firebase.initializeApp(config);
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -97,7 +97,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         handleLogOutButton = () => {
-            this.setState({login: false})
+            var auth = firebase.auth();
+
+            firebase.auth().signOut().then(() => {
+                console.log('Signed Out');
+                this.setState({
+                    name: '',
+                    email: '',
+                    key: '',
+                    photo: '',
+                    uid: '',
+                    messages: [],
+                    text: '',
+                    userId: '',
+                    date: new Date().toLocaleString(),
+                    login: false
+                });
+            }),
+            (() => {
+                console.error('Sign Out Error', error);
+            });
         }
 
         render() {
@@ -109,10 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return (
                     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
                         <div>
-                            <AppBar
-                              title='Simple Chat App'
-                              iconElementLeft={<IconButton onClick={this.handleLogOutButton}><NavigationClose /></IconButton>}
-                              >
+                            <AppBar title='Simple Chat App' iconElementLeft={< IconButton onClick = {
+                                this.handleLogOutButton
+                            } > <NavigationClose/> < /IconButton>}>
                                 <Chip backgroundColor={'#303030'} style={{
                                     height: '32px',
                                     marginTop: '15px'
