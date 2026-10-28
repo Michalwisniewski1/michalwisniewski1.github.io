@@ -9,7 +9,7 @@
 <body>
 <main>
 <h1>Polityka prywatności Clio Live</h1>
-<p class="lead">Obowiązuje od 27 października 2026 r.</p>
+<p class="lead">Obowiązuje od 28 października 2026 r.</p>
 
 <p>Administratorem danych jest Michał Wiśniewski prowadzący działalność gospodarczą pod firmą MICHAŁ WIŚNIEWSKI (NIP 5361938799, REGON 382423954), kontakt: <a href="mailto:wisniewskimichallukasz@gmail.com">wisniewskimichallukasz@gmail.com</a>.</p>
 
@@ -19,21 +19,21 @@
 <h2>Jakie dane przetwarza aplikacja</h2>
 <ul>
 <li><strong>Odczyty z samochodu</strong> (temperatury, obroty, prędkość, napięcie, poziom paliwa, kody usterek) z adaptera OBD połączonego przez Bluetooth. Zapisywane w bazie na telefonie jako historia jazd.</li>
-<li><strong>Lokalizacja</strong>, tylko jeśli na nią zezwolisz: jedno ustalenie pozycji po zakończeniu jazdy, żeby zapamiętać miejsce parkowania. Zgoda „Zezwalaj zawsze” pozwala zapisać to miejsce, gdy telefon jest zablokowany.</li>
+<li><strong>Lokalizacja</strong>, tylko jeśli na nią zezwolisz i tylko w trakcie połączenia z samochodem: pozycja telefonu co około 2 sekundy (ślad jazdy i prędkość z GPS do porównania z prędkościomierzem) oraz ostatnia pozycja po zakończeniu jazdy jako miejsce parkowania. Aplikacja nie korzysta z lokalizacji w tle, poza sesją z samochodem.</li>
 <li><strong>Urządzenia Bluetooth</strong>: aplikacja wyszukuje i łączy się z adapterem OBD wybranym przez Ciebie.</li>
 </ul>
 
 <h2>Gdzie trafiają dane</h2>
 <ul>
 <li><strong>Na telefon</strong>: historia jazd i ustawienia są w pamięci aplikacji. Usunięcie aplikacji usuwa te dane.</li>
-<li><strong>Do Twojego serwera, jeśli go skonfigurujesz</strong>: aplikacja może wysyłać odczyty, podsumowania jazd i miejsce parkowania do brokera MQTT (np. Home Assistant) pod adresem, który sam podasz. Ta funkcja jest domyślnie wyłączona, a dane nie trafiają nigdzie indziej.</li>
+<li><strong>Do Twojego serwera, jeśli go skonfigurujesz</strong>: aplikacja może wysyłać odczyty, podsumowania jazd, ślad jazdy i miejsce parkowania do brokera MQTT (np. Home Assistant) pod adresem, który sam podasz. Ta funkcja jest domyślnie wyłączona, a dane nie trafiają nigdzie indziej. Połączenie może być szyfrowane (TLS), jeśli włączysz tę opcję; bez niej dane idą otwartym tekstem, co jest przeznaczone dla serwera w Twojej sieci domowej.</li>
 <li><strong>Na ekran samochodu</strong> przez Android Auto, gdy telefon jest połączony z autem.</li>
 </ul>
 
 <h2>Uprawnienia</h2>
 <ul>
 <li>Bluetooth: połączenie z adapterem OBD.</li>
-<li>Lokalizacja: miejsce parkowania (opcjonalnie).</li>
+<li>Lokalizacja: ślad jazdy i miejsce parkowania, tylko w trakcie sesji z samochodem (opcjonalnie).</li>
 <li>Internet i stan sieci: wysyłanie danych do Twojego serwera MQTT (opcjonalnie).</li>
 <li>Powiadomienia i usługa na pierwszym planie: odczyt danych w trakcie jazdy, ostrzeżenia i podsumowanie jazdy.</li>
 </ul>
